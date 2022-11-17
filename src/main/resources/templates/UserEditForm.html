@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <title>WELCOME</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="card">
+
+  <div class="card-header bg-primary text-white text-center">
+    <h3>WELCOME TO USER EDIT PAGE </h3>
+  </div>
+
+  <div class="card-body">
+    <form th:action="@{/users/update}" method="POST" th:object="${users}">
+      ID : <input type="text" th:field="*{Id}" readonly class="form-control"/>
+      USERNAME : <input type="text" th:field="*{userName}" class="form-control"/>
+      USER-EMAIL : <input type="text" th:field="*{userEmail}" class="form-control"/>
+      <br/>
+      USER ADDRESS : <textarea th:field="*{userAddress}" class="form-control"></textarea>
+      <button type="submit" class="btn btn-success">UPDATE</button>
+    </form>
+  </div>
+</div>
+</body>
+
+</html>
